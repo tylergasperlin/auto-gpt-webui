@@ -6,6 +6,7 @@ export function useApiService() {
   const { toastBackendError } = useToastShortcuts();
 
   const apiService = new APIService(getBackendApiUrl());
+
   apiService.onError = toastBackendError;
 
   return apiService;

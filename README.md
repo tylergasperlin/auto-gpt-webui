@@ -1,3 +1,7 @@
+# if ports lock up run
+    kill -9 $(lsof -ti:2200)
+
+
 # Auto-GPT WebUI
 
 This project is a frontend web application that runs and interacts with [Auto-GPT](https://github.com/Torantulino/Auto-GPT). The backend application provides the core logic and functionality, while this frontend application wraps over it and offers a user-friendly interface.
@@ -23,7 +27,7 @@ Clone the repo, then enter the root directory and run the folling commands:
 
 ```bash
 npm install
-npm run setup-auto-gpt
+npm run setup-auto_gpt
 ```
 
 - The first command will install the required dependencies.

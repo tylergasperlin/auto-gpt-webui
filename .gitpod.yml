@@ -1,8 +1,8 @@
 # Commands to start on workspace startup
 tasks:
   - name: Initialize & Start Development Server
-    init: npm run setup-auto-gpt && npm install 
-    before: pip install -r auto-gpt/requirements.txt
+    init: npm run setup-auto_gpt && npm install 
+    before: pip install -r auto_gpt/requirements.txt
     command: npm run dev
 
 # Ports to expose on workspace startup

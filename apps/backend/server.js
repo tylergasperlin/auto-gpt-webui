@@ -13,7 +13,7 @@ const app = express();
 app.use(cors());
 
 const PORT = process.env.PORT || 2200;
-const RELATIVE_PATH_TO_AUTOGPT = '../../auto-gpt';
+const RELATIVE_PATH_TO_AUTOGPT = '../../auto_gpt';
 // const PATH_TO_AI_SETTINGS_FILE = fs.existsSync(
 //   path.join(__dirname, RELATIVE_PATH_TO_AUTOGPT, 'ai_settings.yaml')
 // )
