@@ -1,12 +1,19 @@
 """Base class for memory providers."""
 import abc
-from config import AbstractSingleton
 import openai
 
+from config import AbstractSingleton, Config
+cfg = Config()
+
+openai.api_key = cfg.openai_api_key
 
 def get_ada_embedding(text):
     text = text.replace("\n", " ")
-    return openai.Embedding.create(input=[text], model="text-embedding-ada-002")["data"][0]["embedding"]
+
+    if cfg.use_azure:
+        return openai.Embedding.create(input=[text], model="text-embedding-ada-002", deployment_id=cfg.openai_embeddings_deployment_id)["data"][0]["embedding"]
+    else:
+        return openai.Embedding.create(input=[text], model="text-embedding-ada-002")["data"][0]["embedding"]
 
 
 class MemoryProviderSingleton(AbstractSingleton):
